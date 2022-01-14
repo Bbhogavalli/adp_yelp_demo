@@ -1,0 +1,5 @@
+{
+    "token": "replace your API Key here",
+    "reviewUrl": "https://api.yelp.com/v3/businesses/${id}/reviews",
+    "searchLocationUrl": "https://api.yelp.com/v3/businesses/search?term=${searchText}&latitude=34.075375&longitude=-84.294090"
+}
