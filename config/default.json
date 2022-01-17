@@ -1,5 +1,5 @@
 {
-    "token": "Dz8rWFWHw8XBUc-tc8rSqM_3lTodWu1oqf-NsvwQgg7pcfl4Ck8Y0DvIoS3I2P4LGIfN_UddfR1tN-DjzzcFX-RFvlLS1e_mBwK3dPemy9GPg7RHeqVAM-LqTAHhYXYx",
+    "token": "Replace Your API KEY here",
     "reviewUrl": "https://api.yelp.com/v3/businesses/${id}/reviews",
     "searchLocationUrl": "https://api.yelp.com/v3/businesses/search?term=${searchText}&latitude=${lat}&longitude=${long}"
 }
