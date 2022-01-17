@@ -2,8 +2,8 @@ const axios = require('axios');
 var lodash = require('lodash');
 const config = require('./config/default.json');
 const token = config.token;
-async function getRestuarant(searchText) {
-    let businessList = await getBusinessSearch(searchText);
+async function getRestuarant(searchText, lat, long) {
+    let businessList = await getBusinessSearch(searchText, lat, long);
     businessList = lodash.sortBy(businessList.businesses, ["rating"]);
     let lastfive = businessList.slice(-5);
 
@@ -46,9 +46,12 @@ function getReviews(data) {
     })
 }
 
-function getBusinessSearch(searchText) {
+function getBusinessSearch(searchText, lat, long) {
+    let url = config.searchLocationUrl.replace("${searchText}", searchText);
+    url = url.replace("${lat}", lat);
+    url = url.replace("${long}", long);
     return new Promise(function (resolve, reject) {
-        axios.get(config.searchLocationUrl.replace("${searchText}", searchText),
+        axios.get(url,
             { headers: { Authorization: `Bearer ${token}` } })
             .then(function (response) {
                 resolve(response.data);
